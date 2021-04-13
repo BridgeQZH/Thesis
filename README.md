@@ -37,11 +37,17 @@ The best approach for optimizing traffic lights is still an open question for re
 
 A system controlling traffic lights with adaptive modules
 
-### References: (Ranked by importance)
+### Formulation
 
-[1] Deep Reinforcement Learning for Intelligent Transportation Systems: A Survey
+A single-agent RL problem is modeled as a Markov Decision Process (MDP).
 
-Part of Abstract: Introduce the latest deep reinforcement learning (RL) based traffic control applications. Specifically, traffic signal control (TSC) applications based on (deep) RL, which have been studied extensively in the literature, are discussed in detail. Different problem formulations, RL parameters, and simulation environments for TSC are discussed comprehensively.   
+**Environment** is the traffic conditions on the roads.
+**Agent** controls the traffic signal.
+**Reward** could be defined on the traffic condition of the intersection.
+
+Usually, during the decision process, the policy that the agent takes combines the exploitation of learned policy and exploration of a new policy.
+
+
 
 
 ### Implementation problems:
@@ -52,9 +58,19 @@ Part of Abstract: Introduce the latest deep reinforcement learning (RL) based tr
 
 Time saving for drivers, energy saving for environment, and safety for all participants.
 
+### Advanced improvements
+
+Multi-agent RL (MARL)
+
 ### Questions(Non-technical):
 
 How to judge the responsibility if accidents happen?
 How to prove that autonomous driving will decrease traffic accidents and increase the quality of transportation?
 
 Welcome to discuss in the issues!
+
+### References: (Ranked by importance)
+
+[1] Deep Reinforcement Learning for Intelligent Transportation Systems: A Survey
+
+Part of Abstract: Introduce the latest deep reinforcement learning (RL) based traffic control applications. Specifically, traffic signal control (TSC) applications based on (deep) RL, which have been studied extensively in the literature, are discussed in detail. Different problem formulations, RL parameters, and simulation environments for TSC are discussed comprehensively.   
