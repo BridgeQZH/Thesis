@@ -6,6 +6,25 @@ This master thesis is about the application of deep reinforcement learning on In
 
 The cycle length rarely changes as time goes by.
 
+### Why is it possible now?
+
+We have much richer information that can be collected from various sources.
+We have the much stronger computing power.
+
+### Assumptions about the traffic model
+
+### Baselines
+
+Webster, GreenWave, Maxband, Actuated, SOTL, Max-pressure, SCATS
+
+### How to quantify efficiency of the intersection?
+
+- Travel time
+- Queue length
+- Number of stops
+- Throughput
+
+
 ### Why choose deep RL?
 
 RL combined with deep learning, named deep RL, is currently accepted as the state-of-the art learning framework in control systems.
