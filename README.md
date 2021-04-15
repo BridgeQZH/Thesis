@@ -31,7 +31,12 @@ RL combined with deep learning, named deep RL, is currently accepted as the stat
 
 ### Challenge
 
-The best approach for optimizing traffic lights is still an open question for researchers, which also proves that the work is meaningful.
+- The best approach for optimizing traffic lights is still an open question for researchers, which also proves that the work is meaningful.
+- Optimizing the travel time of all vehicles in the network becomes especially harder when the destination of a vehicle in unknown to the traffic signal controller in advance.
+- Design of RL formulation; The weight on each term is tricky to set.
+- Learning efficiency.
+- Credit assignment. In order to maximise the reward in the long run, the agent needs to determine which actions will lead to such outcome, which is essentially the temporal CAP.
+- Safety issue
 
 ### Final product
 
@@ -43,10 +48,32 @@ A single-agent RL problem is modeled as a Markov Decision Process (MDP).
 
 **Environment** is the traffic conditions on the roads.
 **Agent** controls the traffic signal.
-**Reward** could be defined on the traffic condition of the intersection.
+**State** include components such as queue length, number of cars, waiting time, and current traffic signal phase; images of vehicles’ positions on the roads;  Volume; Delay; Speed; Phase duration.
 
-Usually, during the decision process, the policy that the agent takes combines the exploitation of learned policy and exploration of a new policy.
+- Queue length
 
+of a lane is the total number of waiting vehicles on the lane
+
+- Waiting time
+
+of a vehicle is defined as the time period a vehicle has been in the “waiting” state
+
+- Volume
+
+of a lane is defined as the number of vehicles on the lane, which equals to the sum of queuing vehicles and moving vehicles on the lane.
+
+- etc
+
+**Reward** could be defined on the traffic condition of the intersection. A typical reward definition is a weighted linear combination of several components such as queue length, waiting time and delay. **Travel time** is hard to serve as an effective reward in RL for several reasons.
+
+- Queue length
+- Waiting time
+- 
+
+### Multi-Agent Difference
+
+The reward could be defined on the level of individual intersections or a group of intersections within the environment.
+Coordination strategy
 
 
 
@@ -57,6 +84,10 @@ Usually, during the decision process, the policy that the agent takes combines t
 ### Why authorities want ITS?
 
 Time saving for drivers, energy saving for environment, and safety for all participants.
+
+### Simulation environment
+
+Simulation of Urban MObility (SUMO): an open-source program for traffic simulation; API called TraCI; can be accelerated by allowing a version without a graphical interface;  supports other upper-level computational frameworks for deep RL and control experiments for traffic microsimulation.
 
 ### Advanced improvements
 
