@@ -43,10 +43,21 @@ A single-agent RL problem is modeled as a Markov Decision Process (MDP).
 
 **Environment** is the traffic conditions on the roads.
 **Agent** controls the traffic signal.
-**Reward** could be defined on the traffic condition of the intersection.
+**State** include components such as queue length, number of cars, waiting time, and current traffic signal phase； images of vehicles’ positions on the roads； Volume; Delay; Speed; Phase duration.
+- Queue length
+of a lane is the total number of waiting vehicles on the lane
+- Waiting time
+of a vehicle is defined as the time period a vehicle has been in the “waiting” state
+
+**Reward** could be defined on the traffic condition of the intersection. A typical reward definition is a weighted linear combination of several components such as queue length, waiting time and delay.
 
 Usually, during the decision process, the policy that the agent takes combines the exploitation of learned policy and exploration of a new policy.
 
+
+### Multi-Agent Difference
+
+The reward could be defined on the level of individual intersections or a group of intersections within the environment.
+Coordination strategy
 
 
 
